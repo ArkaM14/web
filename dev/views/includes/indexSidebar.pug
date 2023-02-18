@@ -1,12 +1,6 @@
 .d-grid.gap-3
-    //- .card.invisible
-    //-     .panel-heading
-    //-         .panel-title Categories
-    //-     .panel-body
-    //-         .form-input
-    //-             select.form-control
-    //-                 each cat in getCategories()
-    //-                     option #[a(href=categoryURL(cat)) #{cat}]
+   
+
 
     .card
         .card-header
@@ -20,16 +14,16 @@
                 - var tagg = tag;
                 a.h2(href='/rss/tag/'+tag class="card-link")
                     i.float-left(class="fa fa-rss" aria-hidden="true")
-                a.h2(href='mailto:?subject=Sumit Maitra : ' + tag + '&body=Sumit Maitra - Blog : https://sumitmaitra.com' + tagURL(tag) class="card-link")
+                a.h2(href='mailto:?subject=Arka Maitra : ' + tag + '&body=Arka Maitra - Blog : https://arkam.me' + tagURL(tag) class="card-link")
                     i(class="fa fa-envelope" aria-hidden="true")
             else
                 if post
-                    a.h2(class="card-link" href='mailto:?subject=Sumit Maitra'+ '&body=Sumit Maitra - Blog : https://sumitmaitra.com' + post.url)
+                    a.h2(class="card-link" href='mailto:?subject=Arka Maitra'+ '&body=Arka Maitra - Blog : https://arkam.me' + post.url)
                         i(class="fa fa-envelope" aria-hidden="true")
                 else
                     a.h2(class="card-link" href='/rss')
                         i.float-left(class="fa fa-rss" aria-hidden="true")
-                    a.h2(class="card-link" href='mailto:?subject=Sumit Maitra'+ '&body=Sumit Maitra - Blog : https://sumitmaitra.com/blog')
+                    a.h2(class="card-link" href='mailto:?subject=Arka Maitra'+ '&body=Arka Maitra - Blog : https://arkam.me/blog')
                         i(class="fa fa-envelope" aria-hidden="true")
 
     .card.panel-default

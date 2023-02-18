@@ -1,12 +1,13 @@
 import * as nconf from 'nconf';
 import { Configuration } from "./server/services/settings/config-model";
 import { Config } from "./server/services/settings/config";
-import * as express from "express";
+import express from "express";
 import * as multer from "multer";
 import * as pug from "pug";
 var Poet = require("poet");
-import { GitFetcher } from "./server/services/git-fetcher/git-fetcher";
-import { GitListener } from "./server/services/git-listener/git-listener";
+// import { GitFetcher } from "./server/services/git-fetcher/git-fetcher";
+// import { GitListener } from "./server/services/git-listener/git-listener";
+import path from "path";
 
 var favicon = require('serve-favicon');
 var session = require('express-session');
@@ -25,10 +26,10 @@ export class web {
                 try {
                     this.app.use(bodyParser.json());
                     this.app.use(bodyParser.urlencoded({ extended: false }));
-
+                    console.log(path.join(__dirname,"posts"))
                     var poet = Poet(this.app, {
                         postsPerPage: 12,
-                        posts: __dirname + '/posts',
+                        posts: path.join(__dirname,"posts") ,
                         metaFormat: 'yaml',
                         showDrafts: config.showDrafts,
                         showFuture: config.showFuture,
